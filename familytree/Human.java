@@ -1,22 +1,24 @@
 package familytree;
 
+
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human {
+public class Human{
+   private int id;
     private String name;
     private LocalDate birthData;
     private LocalDate deathData;
-    public Human father,mother;
-    public List<Human> children;
+    private Human father,mother;
+    private List<Human> children;
     private Gender gender;
 
 
     public Human(String name, Gender gender, LocalDate birthData,
                  LocalDate deathData, Human father, Human mother){
-        int id = -1;
+
         this.name = name;
         this.birthData = birthData;
         this.deathData = deathData;
@@ -39,7 +41,13 @@ public class Human {
     public String getName(){
         return name;
     }
+    public int getId(){
+        return id;
+    }
 
+    public void setID(int id){
+        this.id = id;
+    }
     public int getPeriod(LocalDate birthData, LocalDate deathData){
         Period diff = Period.between(birthData, LocalDate.now());
         return diff.getYears();
@@ -86,7 +94,8 @@ public class Human {
     }
     public String getInfo(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Имя - ").append(name);
+        sb.append("Id - ").append(id);
+        sb.append(", Имя - ").append(name);
         sb.append(", Пол - ").append(gender);
         sb.append(", День рождения - ").append(birthData);
         sb.append(", Возраст - ").append(getAge());

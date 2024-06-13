@@ -1,11 +1,12 @@
 package familytree;
 
+
 import java.time.LocalDate;
 
 
 public class Main{
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         FamilyTree fm = new FamilyTree();
 
         Human Vera = new Human("Вера", Gender.Female,
@@ -22,6 +23,8 @@ public class Main{
                 LocalDate.of(1999, 12,28),Sasha,Luda);
         Human Egor = new Human("Егор",Gender.Male,
                 LocalDate.of(2008, 3,6), Sasha, Luda);
+
+
 
         Vera.addChild(Ruslan);
         Valentin.addChild(Ruslan);
@@ -42,6 +45,13 @@ public class Main{
         fm.addHuman(Egor);
 
         System.out.println(fm);
+
+
+
+
+
+        //System.out.println(fm.findHuman(3)); // - Найти человека по id.
+
 
     }
 

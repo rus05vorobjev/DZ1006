@@ -1,9 +1,14 @@
-package familytree;
+package familytree.familytreelist;
 
+import familytree.human.CorporatBirthData;
+import familytree.human.Human;
+
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class FamilyTree {
+public class FamilyTree implements Serializable{
    private List<Human> humans;
    private int humansID;
 
@@ -37,6 +42,10 @@ public class FamilyTree {
         }return sb.toString();
     }
 
-    public static class FileHandler {
+    public void sortFamilyTree(){
+        Collections.sort(humans);
+    }
+    public void sortBirthData() {
+        Collections.sort(humans, new CorporatBirthData());
     }
 }

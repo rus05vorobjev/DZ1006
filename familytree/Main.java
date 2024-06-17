@@ -1,14 +1,48 @@
 package familytree;
 
 
+import familytree.familytreelist.FamilyTree;
+import familytree.human.Gender;
+import familytree.human.Human;
+import familytree.load.FileHandler;
+import familytree.load.Writable;
+
 import java.time.LocalDate;
 
 
 public class Main{
 
-    public static void main(String[] args)  {
-        FamilyTree fm = new FamilyTree();
+    public static void main(String[] args) {
 
+
+        //String filePath = "C:\\Java\\DzTree\\tree.txt";
+        //FamilyTree tree = fmTast();
+
+        //FamilyTree tree = load(filePath);
+
+        //System.out.println(tree);
+
+        //save(tree,filePath);
+        FamilyTree tree = fmTast();
+        //System.out.println(tree);
+        //tree.sortFamilyTree(); // Сортировка по алфовиту.
+        tree.sortBirthData();
+        System.out.println(tree); // Сортировка по дню рождения.
+
+
+    }
+    private static void save(FamilyTree tree, String filePath){
+        Writable writable = new FileHandler();
+        writable.save(tree,filePath);
+    }
+    private static FamilyTree load(String filePath){
+        Writable writable = new FileHandler();
+        return (FamilyTree) writable.read(filePath);
+    }
+
+    private static FamilyTree fmTast(){
+
+            FamilyTree fm = new FamilyTree();
         Human Vera = new Human("Вера", Gender.Female,
                 LocalDate.of(1953,5,18));
         Human Valentin = new Human("Валентин", Gender.Male,
@@ -44,7 +78,11 @@ public class Main{
         fm.addHuman(Olga);
         fm.addHuman(Egor);
 
-        System.out.println(fm);
+        return fm; }
+
+
+
+
 
 
 
@@ -55,4 +93,4 @@ public class Main{
 
     }
 
-}
+

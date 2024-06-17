@@ -1,14 +1,20 @@
-package familytree;
+package familytree.human;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human{
+public class Human implements Serializable, Comparable<Human> {
    private int id;
     private String name;
+
+    public LocalDate getBirthData() {
+        return birthData;
+    }
+
     private LocalDate birthData;
     private LocalDate deathData;
     private Human father,mother;
@@ -109,6 +115,11 @@ public class Human{
     @Override
     public String toString() {
         return getInfo();
+    }
+
+    @Override
+    public int compareTo(Human o) {
+        return this.name.compareTo(o.name);
     }
 }
 

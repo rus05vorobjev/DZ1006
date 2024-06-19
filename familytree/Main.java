@@ -25,8 +25,8 @@ public class Main{
         //save(tree,filePath);
         FamilyTree tree = fmTast();
         //System.out.println(tree);
-        //tree.sortFamilyTree(); // Сортировка по алфовиту.
-        tree.sortBirthData();
+        //tree.sortName(); // Сортировка по алфовиту.
+       // tree.sortBirthData();
         System.out.println(tree); // Сортировка по дню рождения.
 
 
@@ -71,7 +71,7 @@ public class Main{
 
 
         fm.addHuman(Vera);
-        fm.addHuman(Valentin);
+        fm.addHuman( Valentin);
         fm.addHuman(Ruslan);
         fm.addHuman(Luda);
         fm.addHuman(Sasha);

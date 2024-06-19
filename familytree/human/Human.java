@@ -1,13 +1,15 @@
 package familytree.human;
 
 
+import familytree.AnotherType;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Human implements Serializable, Comparable<Human> {
+public class Human implements Serializable, Comparable<Human>, AnotherType<Human> {
    private int id;
     private String name;
 

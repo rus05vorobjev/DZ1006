@@ -1,9 +1,8 @@
-package familytree.familytreelist;
+package familytree.model.familytreelist;
 
-import familytree.AnotherType;
-import familytree.human.CorparatarName;
-import familytree.human.CorporatBirthData;
-import familytree.human.Human;
+import familytree.model.human.AnotherType;
+import familytree.model.human.CorparatarName;
+import familytree.model.human.CorporatBirthData;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -26,23 +25,30 @@ public class FamilyTree<T extends AnotherType<T>> implements Serializable{
     }
     public T findHuman(int id){
         for(T human: humans){
+
             if(human.getId() == id){
                 return human;
             }
         } return null;
     }
-
-    @Override
-    public String toString() {
+    public String getHumanInfo() {
         StringBuilder sb = new StringBuilder();
         sb.append("Список людей:\n");
-        for(T human: humans){
+        for (T human : humans) {
 
             sb.append(human);
             sb.append("\n");
             sb.append("\n");
-        }return sb.toString();
+
+        }
+        return sb.toString();
     }
+
+    @Override
+    public String toString() {
+        return getHumanInfo();
+    }
+
     public void sortName() {
         Collections.sort(humans, new CorparatarName<>());
     }

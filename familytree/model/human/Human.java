@@ -1,7 +1,5 @@
-package familytree.human;
+package familytree.model.human;
 
-
-import familytree.AnotherType;
 
 import java.io.Serializable;
 import java.time.LocalDate;

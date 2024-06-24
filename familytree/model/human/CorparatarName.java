@@ -1,6 +1,4 @@
-package familytree.human;
-
-import familytree.AnotherType;
+package familytree.model.human;
 
 import java.util.Comparator;
 
